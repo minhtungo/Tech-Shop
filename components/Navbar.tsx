@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux';
 import { signIn, signOut, useSession } from 'next-auth/react';
 
 const Navbar = () => {
-  const user = false;
+  const { data: session } = useSession();
   const items = useSelector(selectBasketItems);
 
   return (
@@ -51,10 +51,10 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {user ? (
+        {session ? (
           <Image
             src={
-              //   session.user?.image ||
+              session.user?.image ||
               'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'
             }
             alt=''
@@ -64,10 +64,7 @@ const Navbar = () => {
             onClick={() => signOut()}
           />
         ) : (
-          <UserIcon
-            className='headerIcon'
-              onClick={() => signIn()}
-          />
+          <UserIcon className='headerIcon' onClick={() => signIn()} />
         )}
       </div>
     </header>

@@ -80,15 +80,16 @@ function Success({ products }: Props) {
             </div>
             <div>
               <p className='text-sm text-gray-600'>
-                Order #{session_id?.slice(-5)}
+                Order #{session_id?.slice(-5).toUpperCase()}
               </p>
               <h4 className='text-lg'>
-                {/* {session ? session.user?.name?.split(' ')[0] : 'Guest'} */}
+                Thank you {' '}
+                {session ? session.user?.name?.split(' ')[0] : 'Guest'}
               </h4>
             </div>
           </div>
 
-          <div className='mx-4 divide-y divide-gray-300 rounded-md border border-gray-300 p-4 lg:ml-14'>
+          <div className='my-4 mx-4 divide-y divide-gray-300 rounded-md border border-gray-300 p-4 lg:ml-14'>
             <div className='space-y-2 pb-3'>
               <p>Your order is confirmed</p>
               <p className='text-sm text-gray-600'>
@@ -96,21 +97,19 @@ function Success({ products }: Props) {
               </p>
             </div>
             <div className='pt-3 text-sm'>
-              <p className='font-medium text-gray-600'>
-                Tracking number:
-              </p>
+              <p className='font-medium text-gray-600'>Tracking number:</p>
               <p>CNB21441622</p>
             </div>
           </div>
 
-          <div className='my-4 mx-4 space-y-2 rounded-md border border-gray-300 p-4 lg:ml-14'>
+          {/* <div className='my-4 mx-4 space-y-2 rounded-md border border-gray-300 p-4 lg:ml-14'>
             <p>Order updates</p>
             <p className='text-sm text-gray-600'>
               You’ll get shipping and delivery updates by email and text.
             </p>
-          </div>
-          <div className='mx-4 flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row'>
-            <p className='hidden lg:inline'>Need help? Contact us</p>
+          </div> */}
+          <div className='mx-4 ml-auto flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row'>
+            {/* <p className='hidden lg:inline'>Need help? Contact us</p> */}
             {mounted && (
               <Button
                 title='Continue Shopping'
@@ -144,7 +143,7 @@ function Success({ products }: Props) {
                 </button>
 
                 <p className='text-xl font-medium text-black'>
-                  <Currency quantity={subtotal + 20} />
+                  <Currency quantity={subtotal} />
                 </p>
               </div>
             </div>
@@ -159,11 +158,7 @@ function Success({ products }: Props) {
                     >
                       <div className='relative flex h-16 w-16 items-center justify-center rounded-md border border-gray-300 bg-[#F1F1F1] text-xs text-white'>
                         <div className='relative h-7 w-7 animate-bounce rounded-md'>
-                          <Image
-                            src=''
-                            layout='fill'
-                            objectFit='contain'
-                          />
+                          <Image src='' layout='fill' objectFit='contain' />
                         </div>
                         <div className='absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[gray] text-xs'>
                           {product.quantity}
@@ -188,21 +183,19 @@ function Success({ products }: Props) {
                   </div>
                   <div className='flex justify-between text-sm'>
                     <p className='text-[gray]'>Discount</p>
-                    <p className='text-[gray]'></p>
+                    <p className='text-[gray]'>$0</p>
                   </div>
                   <div className='flex justify-between text-sm'>
                     <p className='text-[gray]'>Shipping</p>
-                    <p className='font-medium'>
-                      <Currency quantity={20} currency='USD' />
-                    </p>
+                    <p className='font-medium'>Free</p>
                   </div>
                 </div>
                 <div className='flex justify-between pt-4'>
                   <p>Total</p>
                   <p className='flex items-center gap-x-2 text-xs text-[gray]'>
-                    USD
+                    CAD
                     <span className='text-xl font-medium text-black'>
-                      <Currency quantity={subtotal + 20} />
+                      <Currency quantity={subtotal} />
                     </span>
                   </p>
                 </div>
