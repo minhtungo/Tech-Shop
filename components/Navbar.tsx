@@ -41,7 +41,7 @@ const Navbar = () => {
         <Link href='/checkout'>
           <div className='relative cursor-pointer'>
             {items.length > 0 && (
-              <span className='absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-[10px] text-white'>
+              <span className='absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-[10px] text-white'>
                 {items.length}
               </span>
             )}
