@@ -7,6 +7,7 @@ import {
 } from '@heroicons/react/outline';
 import { selectBasketItems } from '../redux/basketSlice';
 import { useSelector } from 'react-redux';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 const Navbar = () => {
   const user = false;
@@ -60,12 +61,12 @@ const Navbar = () => {
             className='cursor-pointer rounded-full'
             width={34}
             height={34}
-            // onClick={() => signOut()}
+            onClick={() => signOut()}
           />
         ) : (
           <UserIcon
             className='headerIcon'
-            //   onClick={() => signIn()}
+              onClick={() => signIn()}
           />
         )}
       </div>
