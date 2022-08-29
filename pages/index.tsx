@@ -8,6 +8,7 @@ import { Tab } from '@headlessui/react';
 import { fetchCategories } from '../utils/fetchCategories';
 import { fetchProducts } from '../utils/fetchProducts';
 import Product from '../components/Product';
+import Basket from '../components/Basket';
 
 interface Props {
   categories: Category[];
@@ -15,12 +16,11 @@ interface Props {
 }
 
 const Home = ({ categories, products }: Props) => {
-
-    const showProducts = (category: number) => {
-      return products
-        .filter((product) => product.category._ref === categories[category]._id)
-        .map((product) => <Product product={product} key={product._id} />); // filter products by category
-    };
+  const showProducts = (category: number) => {
+    return products
+      .filter((product) => product.category._ref === categories[category]._id)
+      .map((product) => <Product product={product} key={product._id} />); // filter products by category
+  };
 
   return (
     <div className=''>
@@ -29,6 +29,7 @@ const Home = ({ categories, products }: Props) => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <Navbar />
+      <Basket />
       <main className='relative h-[200vh] bg-[#E7ECEE]'>
         <Hero />
       </main>
