@@ -20,8 +20,8 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className='relative hidden h-[450px] w-[450px] transition-all duration-500 md:inline lg:h-[650px] lg:w-[600px]'>
-        <Image src='/iphone.png' layout='fill' objectFit='contain' />
+      <div className='relative hidden h-[450px] w-[450px] transition-all duration-500 md:inline lg:h-[600px] lg:w-[600px]'>
+        <Image src='/xps-13.png' layout='fill' objectFit='contain' />
       </div>
     </section>
   );
