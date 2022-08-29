@@ -80,7 +80,7 @@ function Success({ products }: Props) {
             </div>
             <div>
               <p className='text-sm text-gray-600'>
-                Order #{session_id?.slice(-5).toUpperCase()}
+                Order #{session_id?.slice(-5).toString().toUpperCase()}
               </p>
               <h4 className='text-lg'>
                 Thank you {' '}
